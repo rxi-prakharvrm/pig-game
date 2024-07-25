@@ -21,10 +21,8 @@ score0El.textContent = 0;
 score1El.textContent = 0;
 
 btnRoll.addEventListener("click", () => {
-  diceCtr.style.transition = "0.5s ease";
-
   var randomNum = Math.ceil(Math.random() * 6);
-  diceEl.src = `dice-${randomNum}.png`;
+  diceEl.src = `images/dice-${randomNum}.png`;
   diceEl.classList.remove("hidden");
 
   if (player1.classList.contains("player--active")) {
