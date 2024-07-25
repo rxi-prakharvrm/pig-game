@@ -61,10 +61,10 @@ btnHold.addEventListener("click", () => {
     player2.classList.remove("player--active");
   }
 
-  if (parseInt(score0El.textContent) >= 10) {
+  if (parseInt(score0El.textContent) >= 100) {
     msgWin.innerHTML = "Player-1 Wins! 🎉"
     overlayWin.classList.remove("hidden");
-  } else if (parseInt(score1El.textContent) >= 10) {
+  } else if (parseInt(score1El.textContent) >= 100) {
     msgWin.innerHTML = "Player-2 Wins! 🎉"
     overlayWin.classList.remove("hidden");
   }
