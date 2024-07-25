@@ -1,7 +1,9 @@
 "use strict";
 
 const diceEl = document.querySelector(".dice");
+const overlayWin = document.querySelector(".overlay--win");
 diceEl.classList.add("hidden");
+overlayWin.classList.add("hidden");
 
 // Code by myself
 const btnNew = document.querySelector(".btn--new");
@@ -14,6 +16,8 @@ const player2 = document.querySelector(".player--1");
 const score0El = document.getElementById("score--0");
 const score1El = document.getElementById("score--1");
 const diceCtr = document.querySelector(".dice-ctr");
+const msgWin = document.querySelector(".msg--win");
+const btnNewOverlay = document.querySelector(".btn--new--overlay");
 
 current0El.textContent = 0;
 current1El.textContent = 0;
@@ -56,13 +60,13 @@ btnHold.addEventListener("click", () => {
     player1.classList.add("player--active");
     player2.classList.remove("player--active");
   }
-  
+
   if (parseInt(score0El.textContent) >= 10) {
-    window.alert("Player1 won!");
-    reloadPage();
-  } else if(parseInt(score1El.textContent) >= 10) {
-    window.alert("Player2 won!");
-    reloadPage();
+    msgWin.innerHTML = "Player-1 Wins! 🎉"
+    overlayWin.classList.remove("hidden");
+  } else if (parseInt(score1El.textContent) >= 10) {
+    msgWin.innerHTML = "Player-2 Wins! 🎉"
+    overlayWin.classList.remove("hidden");
   }
 });
 
@@ -72,6 +76,7 @@ function reloadPage() {
   current0El.textContent = 0;
   current1El.textContent = 0;
   diceEl.classList.add("hidden");
+  overlayWin.classList.add("hidden");
   player1.classList.add("player--active");
   player2.classList.remove("player--active");
 }
